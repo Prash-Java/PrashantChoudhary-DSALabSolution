@@ -6,19 +6,16 @@ public class LongestPathForBinaryTreeDriver {
     // BST node data and behaviour
     static class Node {
         int key, height;
-        LongestPathForBinaryTreeDriver.Node left, right;
+        Node left, right;
     }
 
     // creation of new node we can proceed here
     static Node newNode(int data) {
         Node temp = new Node();
-
         temp.key = data;
         temp.height = 0;
-
         temp.left = null;
         temp.right = null;
-
         return temp;
     }
 
@@ -26,7 +23,6 @@ public class LongestPathForBinaryTreeDriver {
     public int getHeight(Node N) {
         if (N == null)
             return 0;
-
         return N.height;
     }
 
@@ -51,7 +47,6 @@ public class LongestPathForBinaryTreeDriver {
             return node;
         }
         node.height = 1 + findMax(getHeight(node.left), getHeight(node.right));
-
         return node;
     }
 
@@ -68,7 +63,7 @@ public class LongestPathForBinaryTreeDriver {
 
     //For Printing the longest path from Root to Leaf Node
     public void printLongestPath(Node root) {
-        System.out.print(root.key+", ");
+        System.out.print(root.key + "->");
         if (root.left == null && root.right == null) {
             return;
         }
@@ -88,17 +83,13 @@ public class LongestPathForBinaryTreeDriver {
 
     //Driver Code
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
         int value, num;
-
         LongestPathForBinaryTreeDriver longestPathOfTree = new LongestPathForBinaryTreeDriver();
         System.out.println("Enter no of values: ");
         num = sc.nextInt();
-
         Node root = null;
         Node result = null;
-
         for (int i = 0; i < num; i++) {
             System.out.println("\nInserted value at " + (i + 1) + ": ");
             value = sc.nextInt();
@@ -113,7 +104,7 @@ public class LongestPathForBinaryTreeDriver {
             longestPathOfTree.inorder(root);
             System.out.println();
         }
-        System.out.println("\nNodes of Longest Branch");
+        System.out.print("\nLongest path ");
         longestPathOfTree.printLongestPath(root);
         sc.close();
     }
