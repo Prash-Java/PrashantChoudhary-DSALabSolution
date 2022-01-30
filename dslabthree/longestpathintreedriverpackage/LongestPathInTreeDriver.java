@@ -24,7 +24,7 @@ public class LongestPathInTreeDriver {
     // Method to get longest path
     public static ArrayList<Integer> longestPath(Node root)
     {
-        // checkpont: If root is null then return empty
+        // checkpoint: If root is null then return empty
         if(root == null)
         {
             ArrayList<Integer> list = new ArrayList<>();
@@ -50,6 +50,7 @@ public class LongestPathInTreeDriver {
     // Main Driver Program
     public static void main(String[] args)
     {
+        //creating tree from problem statement
         Node root = newNode(100);
         root.left = newNode(20);
         root.right = newNode(130);
@@ -57,16 +58,16 @@ public class LongestPathInTreeDriver {
         root.left.right = newNode(50);
         root.right.left = newNode(110);
         root.right.right = newNode(140);
-        root.left.left.left = newNode(5);
+//        root.left.left.left = newNode(5);
 
-        ArrayList<Integer> output = longestPath(root);
-        int n = output.size();
+        ArrayList<Integer> resultList = longestPath(root);
+        int n = resultList.size();
         System.out.print("Longest path ");
-        System.out.print(output.get(n - 1));
+        System.out.print(resultList.get(n - 1));
         //Printing In Reverse Order So That Path Tracing Starts From Root Towards Leaf Node
         for(int i = n - 2; i >= 0; i--)
         {
-            System.out.print(" -> " + output.get(i));
+            System.out.print(" -> " + resultList.get(i));
         }
     }
 }
