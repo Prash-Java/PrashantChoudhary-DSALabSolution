@@ -25,3 +25,10 @@ public class BalancedBracketsDriver {
         }
     }
 }
+
+//    public int getBalanceFactor(LongestPathForBinaryTreeDriver.Node N) {
+//        if (N == null)
+//            return 0;
+//
+//        return getHeight(N.left) - getHeight(N.right);
+//    }

@@ -1,4 +1,4 @@
-package com.greatlearning.dslabthree.longestpathinbinarytreedriverpackage;
+package com.greatlearning.dslabthree.longestpathinbinarytreedriverpackageusingbst;
 
 import java.util.Scanner;
 
